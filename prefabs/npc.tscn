@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://cjsa21s2gv8ua"]
+
+[ext_resource type="Texture2D" uid="uid://bcepdr0iqfjfr" path="res://art/tilemap_packed.png" id="1_ideak"]
+[ext_resource type="Script" uid="uid://dvnrin8mb2vhm" path="res://prefabs/npc.gd" id="1_kh24r"]
+[ext_resource type="PackedScene" uid="uid://bq5dc2mvrklqm" path="res://prefabs/interactable.tscn" id="2_xxcha"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xxcha"]
+size = Vector2(12, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kh24r"]
+resource_local_to_scene = true
+atlas = ExtResource("1_ideak")
+region = Rect2(384, 48, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kh24r"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+texture_filter = 1
+script = ExtResource("1_kh24r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_xxcha")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_kh24r")
+
+[node name="Interactable" parent="." instance=ExtResource("2_xxcha")]
+position = Vector2(0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+shape = SubResource("RectangleShape2D_kh24r")

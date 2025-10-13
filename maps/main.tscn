@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3bj4tkpu1c1i"]
+
+[ext_resource type="Script" uid="uid://c7qpci5vyx3tb" path="res://maps/main.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://lbsumrdnkypo" path="res://prefabs/player.tscn" id="2_h2yge"]
+[ext_resource type="Script" uid="uid://ep0e30uvci50" path="res://maps/camera_script.gd" id="2_oduwx"]
+[ext_resource type="PackedScene" uid="uid://ipadct425weq" path="res://ui/StartScreen.tscn" id="3_72qrf"]
+
+[node name="main" type="Node"]
+script = ExtResource("1_0xm2m")
+
+[node name="SceneContainer" type="Node" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("2_h2yge")]
+scale = Vector2(1, 1)
+
+[node name="Camera2D2" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
+position = Vector2(180, 180)
+zoom = Vector2(2, 2)
+script = ExtResource("2_oduwx")
+target = NodePath("../StartScreenMarker")
+
+[node name="StartScreenMarker" type="Marker2D" parent="."]
+position = Vector2(180, 180)
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="StartScreenMarker"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -250.0
+offset_right = 250.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartSceenUI" parent="StartScreenMarker/AspectRatioContainer" instance=ExtResource("3_72qrf")]
+layout_mode = 2

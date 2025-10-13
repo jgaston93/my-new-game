@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwgo433nhfyc8"]
+
+[ext_resource type="Script" uid="uid://bm7wcnj138w5f" path="res://prefabs/door.gd" id="1_v6xrn"]
+[ext_resource type="PackedScene" uid="uid://bq5dc2mvrklqm" path="res://prefabs/interactable.tscn" id="2_0phs7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_50cdl"]
+
+[node name="Door" type="Node"]
+script = ExtResource("1_v6xrn")
+
+[node name="Interactable" parent="." instance=ExtResource("2_0phs7")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+shape = SubResource("RectangleShape2D_50cdl")
