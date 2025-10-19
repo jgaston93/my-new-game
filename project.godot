@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+Corruption="*res://corruption.gd"
+SceneManager="*res://scene_manager.gd"
 
 [display]
 

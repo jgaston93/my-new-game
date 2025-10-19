@@ -1,4 +1,15 @@
 ~ start
-Construction Worker: Every road's closed, chief. It ain't maintenance, it's a full teardown. 
-Construction Worker: Feels like the map's getting rewritten, and nobody told the folks who live here.
+if Corruption.corruption == 0:
+	Construction Worker: Don't know what the holdup is. They say it's a sinkhole, but I've never seen a repair take this long. 
+	Construction Worker: Feels like we're being walled in.
+
+elif Corruption.corruption == 1:
+	Construction Worker: We pave it over, and the next morning, the cracks are back. But they're not normal cracks.
+	Construction Worker: They look like... patterns.
+	Construction Worker: Like letters from no alphabet I've ever seen. The ground is trying to say something.
+
+elif Corruption.corruption == 2:
+	Construction Worker: The repairs are done. The road is much better now. It doesn't go anywhere.
+	Construction Worker: Just as it should be. It keeps us safe.
+	Construction Worker: It keeps us here.
 => END

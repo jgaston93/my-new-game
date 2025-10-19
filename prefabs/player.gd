@@ -43,14 +43,17 @@ func handle_input() -> void:
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 		
-		if velocity.x > 0:
-			current_direction = Direction.RIGHT
-		elif velocity.x < 0:
-			current_direction = Direction.LEFT
-		if velocity.y > 0:
-			current_direction = Direction.DOWN
-		elif velocity.y < 0:
-			current_direction = Direction.UP
+		if velocity.x != 0 and velocity.y == 0:
+			if velocity.x > 0:
+				current_direction = Direction.RIGHT
+			elif velocity.x < 0:
+				current_direction = Direction.LEFT
+				
+		if velocity.y != 0 and velocity.x == 0:
+			if velocity.y > 0:
+				current_direction = Direction.DOWN
+			elif velocity.y < 0:
+				current_direction = Direction.UP
 		
 		$InteractingComponent.rotation = rotation_map[current_direction]
 		$AnimatedSprite2D.animation = direction_map[current_direction]
@@ -66,4 +69,3 @@ func _physics_process(_delta: float) -> void:
 func start(pos: Vector2) -> void:
 	position = pos
 	show()
-	$PlayerCollision.disabled = false

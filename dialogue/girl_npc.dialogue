@@ -1,4 +1,14 @@
 ~ start
-Girl: Hey I don't think I've seen you before...
-Girl: Are you from around here?
+if Corruption.corruption == 0:
+	Girl: I walk this path every day. Every single day. But today...
+	Girl: the angles feel wrong. Don't they?
+	Girl: Like the building is trying to be something it isn't.
+elif Corruption.corruption == 1:
+	Girl: There's a window on the third floor. I'm sure of it. But when I look away and look back, it's gone.
+	Girl: And the worst part is... no one else remembers it being there at all.
+	Girl: Am I the only one who sees?
+elif Corruption.corruption == 2:
+	Girl: It's not wrong. It's just new. The door isn't where you see it. It's where the corners meet in a way they shouldn't.
+	Girl: You have to stop looking, and just... step through.
+	Girl: It's so much bigger on the inside.
 => END

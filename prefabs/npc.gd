@@ -10,4 +10,5 @@ func _ready() -> void:
 	$Sprite2D.texture.region = sprite_region
 	
 func _on_interact():
-	var _dialogue_line = DialogueManager.show_dialogue_balloon(dialogue)
+	if dialogue != null:
+		var _dialogue_line = DialogueManager.show_dialogue_balloon(dialogue)

@@ -1,4 +1,15 @@
 ~ start
-Old Man: Haven't heard a single chirp all week.
-Old Man: Used to be, they'd cover this park like a great, fluttering blanket. Now... just quiet.
+if Corruption.corruption == 0:
+	Old Man: Strange, isn't it? Used to be you couldn't hear yourself think for all the chirping.
+	Old Man: Now... silence. I wonder where the birds have gone.
+
+elif Corruption.corruption == 1:
+	Old Man: I saw one today. A little sparrow. But it didn't fly. It... it unfolded.
+	Old Man: Like a piece of paper someone had crumpled up.
+	Old Man: It was all sharp points and wrong joints. Then it was gone.
+
+elif Corruption.corruption == 2:
+	Old Man: They never left. They just learned to be quiet. To nest inside.
+	Old Man: You just have to be still. Very, very still.
+	Old Man: Then you can feel their wings...
 => END

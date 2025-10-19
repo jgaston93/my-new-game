@@ -2,8 +2,10 @@ extends Node
 
 @onready var interactable: Area2D = $Interactable
 
+@export var scene_name: String
+
 func _ready() -> void:
 	interactable.interact = _on_interact
 	
 func _on_interact():
-	var _dialogue_line = DialogueManager.show_dialogue_balloon(load("res://dialogue/npc_dialogue.dialogue"))
+	SceneManager.change_scene(scene_name)
